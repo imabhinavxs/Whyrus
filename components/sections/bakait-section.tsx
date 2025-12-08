@@ -1,13 +1,14 @@
 "use client"
 
+import Image from "next/image"
 import { SectionWrapper } from "../section-wrapper"
 
 const bakaits = [
   {
     title: "Pradhan Bakait",
-    subtitle: "Prime Minister of Bakaiti",
-    description:
-      "The chief questioner. The origin of thought-virus strain WHY-001. Philosopher of doubt, chronic overthinker, part-time UPSC rebel, full-time troublemaker.",
+    subtitle: "Utkarsh Shukla",
+    description: "Patient Zero",
+    imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/Utkarsh.jpeg",
   },
   {
     title: "Deputy Bakait",
@@ -52,19 +53,29 @@ export function BakaitSection() {
               className="group border border-border/50 rounded-lg p-6 sm:p-8 hover:border-foreground/30 transition-all bg-card/20"
             >
               <div className="flex flex-col sm:flex-row sm:items-start gap-6">
-                {/* Abstract portrait placeholder */}
-                <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-border/50 flex items-center justify-center bg-card/50">
-                  {/* Viral network silhouette */}
-                  <svg className="w-12 h-12 sm:w-16 sm:h-16 text-foreground/30" viewBox="0 0 100 100">
-                    <circle cx="50" cy="35" r="15" fill="none" stroke="currentColor" strokeWidth="1" />
-                    <line x1="50" y1="50" x2="50" y2="75" stroke="currentColor" strokeWidth="1" />
-                    <line x1="50" y1="55" x2="30" y2="65" stroke="currentColor" strokeWidth="1" />
-                    <line x1="50" y1="55" x2="70" y2="65" stroke="currentColor" strokeWidth="1" />
-                    <circle cx="50" cy="35" r="3" fill="currentColor" />
-                    <circle cx="30" cy="65" r="2" fill="currentColor" />
-                    <circle cx="70" cy="65" r="2" fill="currentColor" />
-                    <circle cx="50" cy="75" r="2" fill="currentColor" />
-                  </svg>
+                {/* Portrait */}
+                <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-border/50 flex items-center justify-center bg-card/50 overflow-hidden">
+                  {bakait.imageUrl ? (
+                    <Image
+                      src={bakait.imageUrl}
+                      alt={bakait.title}
+                      width={96}
+                      height={96}
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  ) : (
+                    /* Viral network silhouette */
+                    <svg className="w-12 h-12 sm:w-16 sm:h-16 text-foreground/30" viewBox="0 0 100 100">
+                      <circle cx="50" cy="35" r="15" fill="none" stroke="currentColor" strokeWidth="1" />
+                      <line x1="50" y1="50" x2="50" y2="75" stroke="currentColor" strokeWidth="1" />
+                      <line x1="50" y1="55" x2="30" y2="65" stroke="currentColor" strokeWidth="1" />
+                      <line x1="50" y1="55" x2="70" y2="65" stroke="currentColor" strokeWidth="1" />
+                      <circle cx="50" cy="35" r="3" fill="currentColor" />
+                      <circle cx="30" cy="65" r="2" fill="currentColor" />
+                      <circle cx="70" cy="65" r="2" fill="currentColor" />
+                      <circle cx="50" cy="75" r="2" fill="currentColor" />
+                    </svg>
+                  )}
                 </div>
 
                 {/* Info */}
