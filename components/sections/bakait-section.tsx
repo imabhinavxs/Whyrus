@@ -11,14 +11,16 @@ const bakaits = [
     imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/Utkarsh.jpeg",
   },
   {
-    title: "Deputy Bakait",
-    subtitle: "Minister of Contradictions",
-    description: "Caretaker of DVAND. Responsible for maintaining internal conflict and external confusion.",
+    title: "Technical Bakait",
+    subtitle: "Abhinav Shukla",
+    description: "Rewiring the Whyrus",
+    imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/Abhinav.jpeg",
   },
   {
-    title: "Literary Bakait",
-    subtitle: "Minister of Birha & Broken Emotions",
-    description: "Custodian of rivers, poems, and unresolved love stories.",
+    title: "Deputy Bakait",
+    subtitle: "Shreya Nalawade",
+    description: "Damsel in Duvidha",
+    imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/ShreyaLa.jpeg",
   },
   {
     title: "Satire Bakait",
