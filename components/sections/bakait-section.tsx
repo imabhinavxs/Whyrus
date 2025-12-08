@@ -22,16 +22,6 @@ const bakaits = [
     description: "Damsel in Duvidha",
     imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/ShreyaLa.jpeg",
   },
-  {
-    title: "Satire Bakait",
-    subtitle: "Minister of Vyanga Affairs",
-    description: "Keeper of sarcasm, roaster of society, inheritor of Parsai's specter.",
-  },
-  {
-    title: "Intern Bakait",
-    subtitle: "Junior Minister",
-    description: "Responsible for fetching metaphors, filing uncertainties, and deleting certainty.",
-  },
 ]
 
 export function BakaitSection() {
@@ -42,7 +32,7 @@ export function BakaitSection() {
         <div className="text-center mb-16">
           <p className="text-sm font-mono text-muted-foreground tracking-widest uppercase mb-4">About The Writers</p>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide mb-4 text-foreground">
-            THE BAKAIT PARLIAMENT
+            THE BAKAIT COUNCIL
           </h2>
           <div className="w-24 h-px bg-foreground/30 mx-auto mt-8" />
         </div>
@@ -95,12 +85,14 @@ export function BakaitSection() {
 
         {/* Official stamp decoration */}
         <div className="flex justify-center mt-12">
-          <div className="border-2 border-dashed border-foreground/20 rounded-full w-32 h-32 flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground/70 font-mono">OFFICIAL</p>
-              <p className="font-serif font-bold text-foreground/50 text-sm">BAKAIT</p>
-              <p className="text-xs text-muted-foreground/70 font-mono">SEAL</p>
-            </div>
+          <div className="w-32 h-32 rounded-full overflow-hidden">
+            <Image
+              src="https://raw.githubusercontent.com/imabhinavxs/images/main/officialseal.jpeg"
+              alt="Official Bakait Seal"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
         </div>
       </div>
