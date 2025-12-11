@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { SectionWrapper } from "../section-wrapper"
 
 export function VyangyaSection() {
@@ -79,6 +80,19 @@ export function VyangyaSection() {
             <div className="w-8 h-px bg-foreground/30" />
             <span className="text-muted-foreground/50 text-2xl">☆</span>
             <div className="w-8 h-px bg-foreground/30" />
+          </div>
+
+          {/* View Articles Button */}
+          <div className="text-center mt-12">
+            <Link
+              href="/vyangya"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/30 rounded-lg hover:bg-foreground/10 transition-colors text-foreground font-medium"
+            >
+              View All Articles
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

@@ -3,20 +3,23 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
-  { href: "#duvidha", label: "DUVIDHA" },
-  { href: "#dvand", label: "DVAND" },
-  { href: "#birha", label: "BIRHA" },
-  { href: "#vyangya", label: "VYANGYA" },
+  { href: "/duvidha", label: "DUVIDHA" },
+  { href: "/dvand", label: "DVAND" },
+  { href: "/birha", label: "BIRHA" },
+  { href: "/vyangya", label: "VYANGYA" },
   { href: "#bakaits", label: "BAKAITS" },
 ]
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +30,13 @@ export function Navigation() {
   }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only prevent default for anchor links (starting with #)
+    if (href.startsWith("#")) {
     e.preventDefault()
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
+      }
     }
     setMobileMenuOpen(false)
   }
@@ -44,29 +50,42 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault()
-              window.scrollTo({ top: 0, behavior: "smooth" })
-            }}
+          <Link
+            href="/"
             className="font-serif text-xl font-bold tracking-wider text-foreground"
           >
             WHYRUS
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.href.startsWith('#') && pathname === '/')
+              return item.href.startsWith('#') ? (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+                  className={cn(
+                    "text-sm font-medium transition-colors tracking-wide",
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  )}
               >
                 {item.label}
               </a>
-            ))}
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors tracking-wide",
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
             <ThemeToggle />
           </div>
 
@@ -92,16 +111,34 @@ export function Navigation() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
-            {navItems.map((item) => (
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.href.startsWith('#') && pathname === '/')
+              return item.href.startsWith('#') ? (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="block py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+                  className={cn(
+                    "block py-3 text-sm font-medium transition-colors tracking-wide",
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  )}
               >
                 {item.label}
               </a>
-            ))}
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "block py-3 text-sm font-medium transition-colors tracking-wide",
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </div>
         )}
       </div>
