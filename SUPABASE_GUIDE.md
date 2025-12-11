@@ -55,6 +55,12 @@
 
 - **`featured`** (boolean): Set to `true` to feature the article
 
+- **`homepage_featured`** (boolean): Set to `true` to display this article on the homepage section
+  - ⚠️ **Important**: You can select up to 6 articles per section to show on homepage
+  - Only articles with `homepage_featured = true` will appear on the homepage
+  - If no articles have `homepage_featured = true`, placeholder cards will show instead
+  - Example: Set `homepage_featured = true` for your best 6 articles in each section
+
 - **`author_id`** (uuid): Leave null for now (can add user auth later)
 
 ### Step 4: Save the Article
@@ -88,6 +94,25 @@ INSERT INTO articles (
   NOW()
 );
 ```
+
+## Featuring Articles on Homepage
+
+To display articles on the homepage sections (instead of placeholder cards):
+
+1. Go to **Table Editor** → **`articles`** table
+2. Find the articles you want to feature on the homepage
+3. Set **`homepage_featured`** to `true` for up to 6 articles per section
+4. Make sure the article also has:
+   - `published = true`
+   - `section` set correctly
+5. The articles will automatically appear on the homepage replacing placeholder cards
+6. Clicking on these article cards will take users to the full article page
+
+**Important Notes:**
+- Maximum 6 articles per section can be featured on homepage
+- If you set more than 6, only the first 6 (by publication date) will show
+- Articles are ordered by `published_at` (newest first), then by `created_at`
+- If no articles have `homepage_featured = true`, placeholder cards will display
 
 ## Adding Categories
 

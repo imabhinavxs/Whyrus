@@ -1,9 +1,14 @@
-"use client"
-
 import Link from "next/link"
 import { SectionWrapper } from "../section-wrapper"
+import { HomepageFeaturedArticles } from "./homepage-featured-articles"
 
 export function DuvidhaSection() {
+  const placeholderCards = [
+    { title: "The Weight of Maybe", topic: "On decisions unmade" },
+    { title: "Between Two Chairs", topic: "UPSC and the soul" },
+    { title: "Probability of Self", topic: "Who am I, statistically?" },
+    { title: "The Blur", topic: "When edges dissolve" },
+  ]
   return (
     <SectionWrapper id="duvidha" className="relative overflow-hidden">
       {/* Unstable lines background */}
@@ -61,25 +66,11 @@ export function DuvidhaSection() {
             ))}
           </div>
 
-          {/* Essay cards */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: "The Weight of Maybe", topic: "On decisions unmade" },
-              { title: "Between Two Chairs", topic: "UPSC and the soul" },
-              { title: "Probability of Self", topic: "Who am I, statistically?" },
-              { title: "The Blur", topic: "When edges dissolve" },
-            ].map((essay, i) => (
-              <div
-                key={i}
-                className="group border border-border/30 rounded-lg p-6 hover:border-foreground/30 transition-all cursor-pointer bg-card/20"
-              >
-                <h4 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-foreground/80 transition-colors">
-                  {essay.title}
-                </h4>
-                <p className="text-sm text-muted-foreground">{essay.topic}</p>
-              </div>
-            ))}
-          </div>
+          {/* Featured Articles or Placeholder Cards */}
+          <HomepageFeaturedArticles 
+            section="duvidha" 
+            placeholderCards={placeholderCards}
+          />
 
           {/* View Articles Button */}
           <div className="text-center mt-12">

@@ -1,9 +1,14 @@
-"use client"
-
 import Link from "next/link"
 import { SectionWrapper } from "../section-wrapper"
+import { HomepageFeaturedArticles } from "./homepage-featured-articles"
 
 export function BirhaSection() {
+  const placeholderCards = [
+    { title: "The Unnamed River", excerpt: "It flows without destination..." },
+    { title: "Letters Never Sent", excerpt: "Dear shadow of tomorrow..." },
+    { title: "Monsoon Memory", excerpt: "Rain remembers what we forget..." },
+    { title: "The Space Between", excerpt: "Neither here nor there exists..." },
+  ]
   return (
     <SectionWrapper id="birha" className="relative overflow-hidden">
       {/* Wave animations background */}
@@ -70,25 +75,11 @@ export function BirhaSection() {
             </p>
           </div>
 
-          {/* Poetry cards with dissolving effect */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: "The Unnamed River", excerpt: "It flows without destination..." },
-              { title: "Letters Never Sent", excerpt: "Dear shadow of tomorrow..." },
-              { title: "Monsoon Memory", excerpt: "Rain remembers what we forget..." },
-              { title: "The Space Between", excerpt: "Neither here nor there exists..." },
-            ].map((poem, i) => (
-              <div
-                key={i}
-                className="group border border-border/30 rounded-lg p-6 hover:border-foreground/20 transition-all cursor-pointer relative overflow-hidden"
-              >
-                {/* Dissolving edge effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <h4 className="font-serif text-lg font-semibold text-foreground mb-3 relative">{poem.title}</h4>
-                <p className="text-sm text-muted-foreground italic relative">{poem.excerpt}</p>
-              </div>
-            ))}
-          </div>
+          {/* Featured Articles or Placeholder Cards */}
+          <HomepageFeaturedArticles 
+            section="birha" 
+            placeholderCards={placeholderCards}
+          />
 
           {/* Visual river element */}
           <div className="relative h-16 overflow-hidden rounded-lg">

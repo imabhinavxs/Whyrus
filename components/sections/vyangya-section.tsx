@@ -1,9 +1,16 @@
-"use client"
-
 import Link from "next/link"
 import { SectionWrapper } from "../section-wrapper"
+import { HomepageFeaturedArticles } from "./homepage-featured-articles"
 
 export function VyangyaSection() {
+  const placeholderCards = [
+    { title: "The Village Committee", tag: "Bureaucracy" },
+    { title: "Development Dreams", tag: "Progress" },
+    { title: "The Holy Hypocrite", tag: "Religion" },
+    { title: "Electoral Arithmetic", tag: "Politics" },
+    { title: "Modern Traditions", tag: "Culture" },
+    { title: "The Educated Fool", tag: "Education" },
+  ]
   return (
     <SectionWrapper id="vyangya" className="relative overflow-hidden">
       {/* Comic-style background */}
@@ -46,34 +53,11 @@ export function VyangyaSection() {
             </p>
           </div>
 
-          {/* Satire cards with comic styling */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { title: "The Village Committee", tag: "Bureaucracy" },
-              { title: "Development Dreams", tag: "Progress" },
-              { title: "The Holy Hypocrite", tag: "Religion" },
-              { title: "Electoral Arithmetic", tag: "Politics" },
-              { title: "Modern Traditions", tag: "Culture" },
-              { title: "The Educated Fool", tag: "Education" },
-            ].map((satire, i) => (
-              <div
-                key={i}
-                className="group border-2 border-border/50 rounded-lg p-5 hover:border-foreground/50 transition-all cursor-pointer bg-card/20 relative"
-                style={{
-                  transform: `rotate(${(i % 2 === 0 ? 1 : -1) * 0.5}deg)`,
-                }}
-              >
-                {/* Comic accent */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-foreground/10 rounded-full" />
-                <span className="text-xs font-mono text-muted-foreground/70 uppercase tracking-wider">
-                  {satire.tag}
-                </span>
-                <h4 className="font-serif text-lg font-semibold text-foreground mt-2 group-hover:text-foreground/80 transition-colors">
-                  {satire.title}
-                </h4>
-              </div>
-            ))}
-          </div>
+          {/* Featured Articles or Placeholder Cards */}
+          <HomepageFeaturedArticles 
+            section="vyangya" 
+            placeholderCards={placeholderCards}
+          />
 
           {/* Rustic decoration */}
           <div className="flex items-center justify-center gap-4 py-4">

@@ -20,6 +20,7 @@ export interface Database {
           author_id: string | null
           published: boolean
           featured: boolean
+          homepage_featured: boolean
           views: number
           created_at: string
           updated_at: string
@@ -37,6 +38,7 @@ export interface Database {
           author_id?: string | null
           published?: boolean
           featured?: boolean
+          homepage_featured?: boolean
           views?: number
           created_at?: string
           updated_at?: string
@@ -54,6 +56,7 @@ export interface Database {
           author_id?: string | null
           published?: boolean
           featured?: boolean
+          homepage_featured?: boolean
           views?: number
           created_at?: string
           updated_at?: string

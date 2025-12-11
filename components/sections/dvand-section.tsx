@@ -1,9 +1,16 @@
-"use client"
-
 import Link from "next/link"
 import { SectionWrapper } from "../section-wrapper"
+import { HomepageFeaturedArticles } from "./homepage-featured-articles"
 
 export function DvandSection() {
+  const placeholderCards = [
+    { title: "Duty vs Desire" },
+    { title: "Individual vs Collective" },
+    { title: "Reason vs Emotion" },
+    { title: "Silence vs Speech" },
+    { title: "Memory vs Forgetting" },
+    { title: "Action vs Contemplation" },
+  ]
   return (
     <SectionWrapper id="dvand" className="relative overflow-hidden">
       {/* Split-screen grid background */}
@@ -68,24 +75,11 @@ export function DvandSection() {
             </div>
           </div>
 
-          {/* Debate topics */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              "Duty vs Desire",
-              "Individual vs Collective",
-              "Reason vs Emotion",
-              "Silence vs Speech",
-              "Memory vs Forgetting",
-              "Action vs Contemplation",
-            ].map((topic, i) => (
-              <div
-                key={i}
-                className="border border-border/30 rounded-lg p-4 text-center hover:border-foreground/30 transition-colors cursor-pointer group"
-              >
-                <span className="text-foreground/80 group-hover:text-foreground transition-colors">{topic}</span>
-              </div>
-            ))}
-          </div>
+          {/* Featured Articles or Placeholder Cards */}
+          <HomepageFeaturedArticles 
+            section="dvand" 
+            placeholderCards={placeholderCards}
+          />
 
           {/* View Articles Button */}
           <div className="text-center mt-12">
