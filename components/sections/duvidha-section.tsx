@@ -45,13 +45,6 @@ export function DuvidhaSection() {
 
         {/* Content placeholder */}
         <div className="space-y-8">
-          <div className="border border-border/50 rounded-lg p-8 bg-card/30 backdrop-blur-sm">
-            <p className="text-muted-foreground leading-relaxed">
-              This hall contains essays of existential doubt, UPSC angst, ambiguity, and philosophical wandering. Here,
-              certainty is the enemy, and every answer births a thousand questions.
-            </p>
-          </div>
-
           {/* Waveform visualization */}
           <div className="flex items-center justify-center gap-1 py-8">
             {Array.from({ length: 40 }).map((_, i) => (

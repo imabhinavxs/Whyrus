@@ -48,33 +48,6 @@ export function DvandSection() {
 
         {/* Content */}
         <div className="space-y-8">
-          <div className="border border-border/50 rounded-lg p-8 bg-card/30 backdrop-blur-sm">
-            <p className="text-muted-foreground leading-relaxed">
-              The arena of debates, contradictions, arguments, and dialectical clashes. Where thesis meets antithesis,
-              and synthesis remains forever elusive.
-            </p>
-          </div>
-
-          {/* Opposing cards */}
-          <div className="grid md:grid-cols-2 gap-0">
-            <div className="border-r border-border/30 p-8 text-right">
-              <h4 className="font-serif text-lg font-semibold text-foreground mb-4">THESIS</h4>
-              <div className="space-y-3">
-                <p className="text-muted-foreground">Tradition preserves wisdom</p>
-                <p className="text-muted-foreground">Structure enables freedom</p>
-                <p className="text-muted-foreground">Faith grounds meaning</p>
-              </div>
-            </div>
-            <div className="p-8 text-left">
-              <h4 className="font-serif text-lg font-semibold text-foreground mb-4">ANTITHESIS</h4>
-              <div className="space-y-3">
-                <p className="text-muted-foreground">Progress requires change</p>
-                <p className="text-muted-foreground">Freedom transcends structure</p>
-                <p className="text-muted-foreground">Doubt illuminates truth</p>
-              </div>
-            </div>
-          </div>
-
           {/* Featured Articles or Placeholder Cards */}
           <HomepageFeaturedArticles 
             section="dvand" 

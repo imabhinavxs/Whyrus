@@ -39,6 +39,30 @@ export function BakaitSection() {
 
         {/* Cabinet members */}
         <div className="space-y-6">
+          {/* Pradhan Bakait Card */}
+          <div className="group border border-border/50 rounded-lg p-6 sm:p-8 hover:border-foreground/30 transition-all bg-card/20">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+              <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-border/50 flex items-center justify-center bg-card/50 overflow-hidden">
+                <img
+                  alt="Lord Commander"
+                  loading="lazy"
+                  width={96}
+                  height={96}
+                  decoding="async"
+                  className="w-full h-full object-cover rounded-full"
+                  style={{ color: "transparent" }}
+                  src="https://raw.githubusercontent.com/imabhinavxs/images/main/shreyaji.jpeg"
+                />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                  <h3 className="font-serif text-xl font-bold text-foreground">Lord Commander 💕✨</h3>
+                  <span className="text-sm font-mono text-muted-foreground">- Shreya Dixit</span>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">The Origin</p>
+              </div>
+            </div>
+          </div>
           {bakaits.map((bakait, i) => (
             <div
               key={i}

@@ -68,13 +68,6 @@ export function BirhaSection() {
 
         {/* Content */}
         <div className="space-y-8">
-          <div className="border border-border/50 rounded-lg p-8 bg-card/30 backdrop-blur-sm">
-            <p className="text-muted-foreground leading-relaxed">
-              The river of poetry, longing, nostalgia, drifting, and incomplete emotions. Where words dissolve at their
-              edges, and meaning flows like water through fingers.
-            </p>
-          </div>
-
           {/* Featured Articles or Placeholder Cards */}
           <HomepageFeaturedArticles 
             section="birha" 

@@ -46,13 +46,6 @@ export function VyangyaSection() {
 
         {/* Content */}
         <div className="space-y-8">
-          <div className="border border-border/50 rounded-lg p-8 bg-card/30 backdrop-blur-sm">
-            <p className="text-muted-foreground leading-relaxed">
-              The hall of satire, cultural criticism, village absurdism, and political irreverence. Where the mirror
-              laughs back, and every truth wears the mask of a joke.
-            </p>
-          </div>
-
           {/* Featured Articles or Placeholder Cards */}
           <HomepageFeaturedArticles 
             section="vyangya" 
