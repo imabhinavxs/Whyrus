@@ -16,12 +16,6 @@ const bakaits = [
     description: "Rewiring the Whyrus",
     imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/Abhinav.jpeg",
   },
-  {
-    title: "Deputy Bakait",
-    subtitle: "Shreya Nalawade",
-    description: "Damsel in Duvidha",
-    imageUrl: "https://raw.githubusercontent.com/imabhinavxs/images/main/ShreyaLa.jpeg",
-  },
 ]
 
 export function BakaitSection() {

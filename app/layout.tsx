@@ -17,8 +17,6 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "WHYRUS — Containing The Recursive WHY",
-  description:
-    "A laboratory of doubt. A mandir of questions. A virus of WHY. Explore philosophical wandering, debates, poetry, and satire.",
   generator: "v0.app",
   keywords: ["philosophy", "doubt", "questions", "satire", "poetry", "WHYRUS"],
 }
